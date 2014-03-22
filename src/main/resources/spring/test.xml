@@ -4,11 +4,25 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="testDaoImp" class="com.springapp.mvc.Dao.TestDaoImp"></bean>
+    <bean id="testDaoImp" class="com.springapp.mvc.Dao.TestDaoImp"/>
 
     <bean id="examDao" class="com.springapp.mvc.Dao.ExamDao">
-        <constructor-arg value="Test Test"></constructor-arg>
+        <constructor-arg value="Test Test"/>
     </bean>
 
-    <bean id="daoFactoryMethod" class="com.springapp.mvc.Dao.DaoFactoryMethod" factory-method="getInstance"></bean>
+    <bean id="daoFactoryMethod" class="com.springapp.mvc.Dao.DaoFactoryMethod" factory-method="getInstance"/>
+
+    <!-- exam03 -->
+    <bean id="jdbcDao" class="com.springapp.mvc.exam03.JdbcDao"/>
+    <bean id="service" class="com.springapp.mvc.exam03.JdbcService">
+        <constructor-arg ref="jdbcDao"/>
+    </bean>
+
+    <!-- exam04 -->
+    <bean id="ibatis" class="com.springapp.mvc.exam04.IbatisDao"/>
+    <bean class="com.springapp.mvc.exam04.IbatisService" id="ibatisService">
+        <property name="ibatisDao" ref="ibatis"/>
+    </bean>
+
+
 </beans>
