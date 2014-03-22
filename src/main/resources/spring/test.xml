@@ -9,4 +9,6 @@
     <bean id="examDao" class="com.springapp.mvc.Dao.ExamDao">
         <constructor-arg value="Test Test"></constructor-arg>
     </bean>
+
+    <bean id="daoFactoryMethod" class="com.springapp.mvc.Dao.DaoFactoryMethod" factory-method="getInstance"></bean>
 </beans>
